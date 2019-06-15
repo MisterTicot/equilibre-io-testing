@@ -9,7 +9,7 @@
   <meta property="og:title"
     content="Equilibre.io ~ Balance your Stellar portfolio">
   <meta property="og:description" name="description"
-    content="Equiliber.io is a portfolio balancer that runs on the Stellar Decentralized Exchange. It is a convenient trading tool to manage positions over the long term.">
+    content="Equilibre.io is a portfolio balancer that runs on the Stellar Decentralized Exchange. It is a convenient trading tool to manage positions over the long term.">
 
   <meta property="og:image" content="https://equilibre.io/icons/512x512.png">
   <meta property="og:image:height" content="512">
@@ -17,11 +17,11 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
-  <link rel="shortcut icon" href="icons/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="icons/16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="icons/32x32.png">
-  <link rel="apple-touch" sizes="180x180" href="icons/apple-touch.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch.png">
   <link rel="mask-icon" href="icons/safari.svg" color="#5bbad5">
 
   <link rel="manifest" href="manifest.json">
@@ -43,21 +43,45 @@
 
   <main>
     <div id="loading" hidden>
-      <h3><i18n>Loading</i18n></h3>
+      <h3><i18n>Loading</i18n><span class="spinner"></span></h3>
     </div>
 
-    <form id="loginForm" autocomplete="on" hidden>
-      <p><i18n>Enter with your Stellar address:</i18n></p>
-      <input id="loginAddressBox" type="text" name="stellar-public-key"
-        placeholder="Public key or federated address">
-      <button type="submit"><i18n>Login</i18n></button>
-      <hr>
-      <button id="ledgerLoginButton">
-        <i18n>Login with Ledger Wallet</i18n>
-      </button>
-      <div class="info"></div>
-    </form>
+    <section id="loginTab" hidden>
+      <h2><i18n>Login</i18n></h2>
+
+      <section>
+
+        <form id="loginForm" autocomplete="on">
+          <h3><i18n>Enter with your Stellar address:</i18n></h3>
+          <input id="loginAddressBox" type="text" name="stellar-public-key"
+            placeholder="Public key or federated address">
+          <button type="submit"><i18n>Login</i18n></button>
+          <hr>
+          <button id="loginWithLedger" type="button">
+            <i18n>Login with Ledger Wallet</i18n>
+          </button>
+
+        </form>
+
+      </section>
+
+      <section>
+        <form>
+        <p><i18n>Feeling Curious ?</i18n><p>
+        <p><a id="demoLink"><i18n>Check My Demo Account</i18n></a></p>
+        <p><a
+           href="https://medium.com/cosmic-plus/equilibre-io-in-depth-analysis-after-one-year-of-rebalancing-bdae5de06449"
+           target="_blank" rel="noopener">
+             <i18n>In-Depth Analysis After One Year of Rebalancing</i18n></a>
+        </form>
+      </section>
+
+    </section>
+
+
   </main>
+
+
 
 
   <noscript>
@@ -67,7 +91,7 @@
     navigator. It is coded in Javascript and requires the browser to allow
     scripts to be run. FYI, the code is directly loaded from the GitHub
     repository and the application can be downloaded and launched from your
-    harddisk.</p>
+    hard disk.</p>
 
     <p>Respecfully,</p>
     <p>Mister.Ticot</p>
