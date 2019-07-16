@@ -2,17 +2,63 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## 1.0.3 - 2019-07-23
+
+### Fixed
+
+- Workaround an issue introduced in [stellar-sdk] 2.0.1 that broke portfolio
+  history retrieval.
+
+## 1.0.2 - 2019-07-22
+
+### Changed
+
+- Improve mobile display.
+- Throw an error when a too low XLM allocation would cause rebalancing to take
+  more than 20 steps.
+- Remove thewwallet.com WSD from anchors choice because it has not enough volume
+  anymore.
+
+### Fixed
+
+- Ensure that outdated offers are replaced before new one are passed. This fixes
+  cases in which outdated offers prevented to pass new ones due to liability
+  threshold.
+- Fix a case in which clicking "Cancel" in the target setup dialog would not
+  reset target setting to the previous state.
+- Fix several miscalculations related to balancing assets with multiple anchors
+  & liquidation. In some cases, those mistakes were preventing trades to be
+  passed, or were causing trades to be passed with lower amount than expected.
+  (Thanks m4dpr0ph3ss0r)
+
+## 1.0.1 - 2019-07-11
+
+### Fixed
+
+- Fix a bug that sometime caused rebalancing transactions to be invalid. (Thanks
+  m4dpr0ph3ss0r)
+
+## 1.0.0 - 2019-07-06
+
+### Added
+
+- Deal with cases where there's not enough XLM to rebalance the portfolio in one
+  step.
+- Lock a minimum XLM balance to pay for network reserve & offers.
 
 ### Changed
 
 - Theme Highstock according to new Equilibre.io colors.
 - Target configuration form appears in a modal box.
 - Add a title to each card.
+- Don't raise an error anymore when rebalancing target is over/under portfolio
+  total value by less than 1‰.
 
 ### Fixed
 
 - Fixed a bug that could lock the app on very low width display.
+- Reduce font size on wider screens. (Thanks [@Pselden] & Damian)
+- Fix a case in which allocation check limits were bypassed.
 
 ## 0.11.2 - 2019-06-28
 
@@ -328,6 +374,8 @@ balance).
 Beta 1 release
 
 [cosmic-lib]: https://github.com/cosmic-plus/node-cosmic-lib/blob/master/CHANGELOG.md
+[stellar-sdk]: https://github.com/stellar/js-stellar-sdk/blob/master/CHANGELOG.md
 [pwa]: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction
 [@ddombrowsy]: https://github.com/ddombrowsky
 [@pawelfus]: https://github.com/pawelfus
+[@pselden]: https://github.com/pselden
