@@ -2,6 +2,78 @@
 
 All notable changes to this project will be documented in this file.
 
+This project adheres to **[Semantic
+Versioning](https://semver.org/spec/v2.0.0.html)**. Version syntax is
+`{major}.{minor}.{patch}`, where a field bump means:
+
+- **Patch**: The release contains bug fixes.
+- **Minor**: The release contains backward-compatible changes.
+- **Major**: The release contains compatibility-breaking changes.
+
+**Remember:** Both micro and minor releases are guaranteed to respect
+backward-compatibility and can be updated to without risk of breakage. For major
+releases, please check this changelog before upgrading.
+
+## 1.3.1 - 2019-09-28
+
+### Fixed
+
+- Translation: Fix french translation.
+
+## 1.3.0 - 2019-09-21
+
+### Changed
+
+- Meta: Update donation address.
+- UI: Update footer icons.
+
+## 1.2.1 - 2019-09-09
+
+### Fixed
+
+- Logic: Fix federated address resolution. This have been broken by 1.1.0. -
+  Thanks [@m4dpr0ph3ss0r](https://keybase.io/m4dpr0ph3ss0r)
+
+## 1.2.0 - 2019-09-07
+
+### Changed
+
+- API: Upgrade [cosmic-lib] to 2.x. (protocol changes)
+
+### Fixed
+
+- Meta: Fix a rare application upgrade bug. Bypass browser cache when fetching
+  latest release to prevent possible unconsistent upgrade.
+
+## 1.1.1 - 2019-08-31
+
+### Fixed
+
+- UI: Fix a style regression from 1.1.0. Highcharts needs to use inline style.
+
+## 1.1.0 - 2019-08-31
+
+### Added
+
+- Security: Add strict Content-Security-Policy.
+
+## 1.0.5 - 2019-08-10
+
+### Fixed
+
+- Fix spread percentage definition: `100*(bestAsk-bestBid)/midpoint`.
+
+## 1.0.4 - 2019-08-03
+
+### Changed
+
+- Remove REPO from default assets list as it doesn't match listing requirements
+  anymore (low spread, decent daily volumes).
+
+### Fixed
+
+- Lock rebalancing transaction request to public network.
+
 ## 1.0.3 - 2019-07-23
 
 ### Fixed

@@ -304,7 +304,7 @@ template {
 [hidden] {
   display: none; }
 
-/* Screen-size handling */
+/* Screen-size Handling */
 @-ms-viewport {
   width: device-width; }
 
@@ -332,6 +332,12 @@ template {
 [hidden] {
   display: none !important; }
 
+html {
+  box-sizing: border-box;
+  vertical-align: middle; }
+  html * {
+    max-height: 100%; }
+
 *, *:before, *:after {
   box-sizing: inherit;
   vertical-align: inherit;
@@ -354,14 +360,12 @@ template {
 /* Layout */
 html {
   position: relative;
-  box-sizing: border-box;
   min-height: 100%;
-  overflow-y: scroll;
-  vertical-align: middle; }
+  overflow-y: scroll; }
 
 body {
   height: 100%;
-  background: linear-gradient(#f6f9fd, #f3fbfe);
+  background: linear-gradient(#f6f9fd, #eff4fd);
   padding: 3rem 0 4.65em 0;
   font-family: "Source Sans Pro", Arial, sans-serif;
   color: #111; }
@@ -394,7 +398,7 @@ a {
   color: #666666; }
   a:hover:not(.selected) {
     text-decoration: none;
-    color: #35a6c3;
+    color: #7799d5;
     cursor: pointer; }
 
 p {
@@ -411,8 +415,8 @@ nav {
     margin: 0.2rem 0 0 1.6em;
     border-bottom: solid 0.2rem transparent; }
     nav a.selected {
-      border-bottom-color: #35a6c3;
-      color: #35a6c3; }
+      border-bottom-color: #7799d5;
+      color: #7799d5; }
 
 h2 {
   margin: 1.75rem;
@@ -477,8 +481,8 @@ tr:hover {
   cursor: pointer; }
 
 tr:hover, tr.selected {
-  background: #f1f9fb;
-  box-shadow: 2px 0px 1px #f1f9fb; }
+  background: #f5f8fc;
+  box-shadow: 2px 0px 1px #f5f8fc; }
 
 tr .footer {
   font-weight: bold; }
@@ -548,12 +552,12 @@ input {
   button:enabled:focus,
   input:enabled:focus {
     outline: 0;
-    box-shadow: 0em 0em 0.1em #35a6c3; }
+    box-shadow: 0em 0em 0.1em #7799d5; }
   textarea:enabled:hover,
   select:enabled:hover,
   button:enabled:hover,
   input:enabled:hover {
-    border: solid 0.05em #35a6c3; }
+    border: solid 0.05em #7799d5; }
 
 textarea[readonly]:hover,
 input[readonly]:hover,
@@ -699,10 +703,10 @@ body > main {
         text-align: right; } }
   body > noscript section.landing h3,
   body > main section.landing h3 {
-    border-bottom: 1px solid #35a6c3;
+    border-bottom: 1px solid #7799d5;
     padding-bottom: 1.2em;
     font-size: 1.2em;
-    color: #367e91;
+    color: #5177b8;
     -ms-flex-item-align: start;
         align-self: flex-start; }
   body > noscript section.landing div,
@@ -712,7 +716,7 @@ body > main {
     margin: 0.45em; }
   body > noscript section section a,
   body > main section section a {
-    color: #367e91; }
+    color: #5177b8; }
   body > noscript section p,
   body > main section p {
     padding: 0 1em; }
@@ -744,8 +748,10 @@ body > footer {
       max-width: 9vw;
       fill: #cccccc;
       transition: fill 0.2s ease; }
+    body > footer .Icon[href="https://cosmic.plus"] svg {
+      fill: #607492; }
     body > footer .Icon:hover svg {
-      fill: #35a6c3; }
+      fill: #7799d5; }
   body > footer p {
     line-height: 2em;
     margin: 0;
