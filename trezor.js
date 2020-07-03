@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{748:function(e,o,r){var s=r(524);if(s.isBrowser){var n=new(r(502).Memo)("hash","0000000000000000000000000000000000000000000000000000000000000000");e.exports=n.value.__proto__.constructor}else e.exports=s.nodeRequire("safe-buffer").Buffer}}]);
-//# sourceMappingURL=trezor.js.map

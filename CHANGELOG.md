@@ -14,6 +14,140 @@ Versioning](https://semver.org/spec/v2.0.0.html)**. Version syntax is
 backward-compatibility and can be updated to without risk of breakage. For major
 releases, please check this changelog before upgrading.
 
+## 1.10.0 - 2020-06-21
+
+### Added
+
+- UI: Add images in the welcoming page.
+
+### Changed
+
+- UI: Change donation address.
+- UI: Upgrade graphic style.
+
+### Fixed
+
+- Security: Upgrade deprecated depend. (Highcharts => 8.x)
+- UI: Fix french translation.
+
+## 1.9.1 - 2020-05-04
+
+### Fixed
+
+- Logic: Fix apay.io USDT support. (now considered as an USD anchor)
+
+## 1.9.0 - 2020-05-02
+
+### Added
+
+- Data: Add support for apay.io USDT anchor.
+
+### Changed
+
+- Data: Update demo configuration.
+
+## 1.8.1 - 2020-04-19
+
+### Fixed
+
+- Logic: Fix transaction request generation. (regression from 1.8.0)
+- UI: Fix a bug that prevented portfolio historic to display.
+
+## 1.8.0 - 2020-04-18
+
+### Changed
+
+- Logic: Update hardware wallet libraries.
+
+## 1.7.0 - 2020-01-25
+
+### Added
+
+- Data: Add market data for GNT (glitzkoin.com) & WLO (pigzbe.com). Equilibre.io
+  won't offer to add those coins as their orderbooks are not strong enough, but
+  users holding those coins can access market data & rebalancing options.
+
+### Changed
+
+- Data: Re-add asset EURT (tempo.eu.com). Tempo solved its liquidity issues &
+  the orderbook is stable since more than a month.
+- Data: List asset WXT (wirexapp.com).
+
+## 1.6.0 - 2020-01-11
+
+### Added
+
+- Logic: Add dust burning. Until now, Equilibre.io was failing to close some
+  trustlines because dust worth under 0.0000001XLM cannot be sold on the DEX.
+  This dust is now sent back to the emitter to bring the balance to 0 before
+  closing the trustline.
+
+### Changed
+
+- Logic: Upgrade @cosmic-plus/ledger-wallet to 2.x.
+- UI: Remove `FRAS` from listed assets. The FRAS/XLM pair is not liquid enough
+  anymore.
+- UI: Update demo account configuration.
+
+### Fixed
+
+- Logic: Close offers before trustlines. Prevent errors when trying to remove an
+  asset with a balance of 0 that has open offers.
+
+## 1.5.1 - 2019-11-30
+
+### Fixed
+
+- Meta: Fix `font/roboto-slab.woff` filename.
+
+## 1.5.0 - 2019-11-30
+
+### Changed
+
+- Meta: Preload script & style.
+
+### Fixed
+
+- UI: Get rid of font loading delay.
+
+## 1.4.3 - 2019-11-23
+
+### Fixed
+
+- Data: Remove `x.token.io` from listed USD anchors. While the token can still
+  be traded at the expected price, the order book became thin lately, and it
+  looks like <x.token.io> is not caring its anchor anymore.
+
+## 1.4.2 - 2019-11-15
+
+### Fixed
+
+- Logic: Fix liquidation of one-of-several anchor. For assets having multiple
+  anchors, liquidation of only one of the anchors was failing on the last dust.
+
+## 1.4.1 - 2019-11-09
+
+### Fixed
+
+- Configuration: Remove PEDI from listed asset. The PEDI/XLM pair doesn't comply
+  with Equilibre.io requirements anymore. (volume is too low, spread is at 60%)
+
+- UI: Fix spread percentage formula.
+  - spread = ask - bid
+  - spread% = 100 \* spread / ask
+
+## 1.4.0 - 2019-10-05
+
+### Added
+
+- UI: Add Trezor Wallet support.
+- UI: Add icons for hardware wallets.
+
+### Changed
+
+- Logic: Upgrade [@cosmic-plus/ledger-wallet] to 1.x.
+- Logic: Upgrade [@cosmic-plus/trezor-wallet] to 0.2.x.
+
 ## 1.3.1 - 2019-09-28
 
 ### Fixed
@@ -447,6 +581,8 @@ Beta 1 release
 
 [cosmic-lib]: https://github.com/cosmic-plus/node-cosmic-lib/blob/master/CHANGELOG.md
 [stellar-sdk]: https://github.com/stellar/js-stellar-sdk/blob/master/CHANGELOG.md
+[@cosmic-plus/ledger-wallet]: https://cosmic.plus/#view:js-ledger-wallet/CHANGELOG
+[@cosmic-plus/trezor-wallet]: https://cosmic.plus/#view:js-trezor-wallet/CHANGELOG
 [pwa]: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction
 [@ddombrowsy]: https://github.com/ddombrowsky
 [@pawelfus]: https://github.com/pawelfus
